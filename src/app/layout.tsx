@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     "Global biotechnology and pharmaceuticals company advancing human longevity through precision science and adaptive intelligence.",
 
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
   },
 
   openGraph: {
