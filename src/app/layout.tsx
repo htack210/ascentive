@@ -14,9 +14,42 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Ascentive Dynamics",
+  title: {
+    default: "Ascentive Dynamics",
+    template: "%s | Ascentive Dynamics",
+  },
   description:
-    "Global pharmaceuticals company advancing human longevity through precision science and adaptive intelligence.",
+    "Global biotechnology and pharmaceuticals company advancing human longevity through precision science and adaptive intelligence.",
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  openGraph: {
+    title: "Ascentive Dynamics",
+    description:
+      "Advancing human longevity through precision science and adaptive intelligence.",
+    url: "https://ascentivedynamics.com",
+    siteName: "Ascentive Dynamics",
+    images: [
+      {
+        url: "https://ascentivedynamics.com/ascentive-og.png",
+        width: 1200,
+        height: 630,
+        alt: "Ascentive Dynamics",
+      },
+    ],
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Ascentive Dynamics",
+    description:
+      "Advancing human longevity through precision science and adaptive intelligence.",
+    images: ["https://ascentivedynamics.com/assets/ADlogo.png"],
+  },
 };
 
 export default function RootLayout({
