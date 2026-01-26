@@ -85,7 +85,7 @@ export default function Home() {
           </button>
         </header>
         <div className="relative mx-auto flex w-full max-w-6xl justify-center px-6 pb-6">
-          <div className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.2em] text-white/70 md:text-sm">
+          <div className="rounded-full border border-cyan-200/30 bg-gradient-to-r from-cyan-400/20 via-sky-400/10 to-blue-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white shadow-[0_0_24px_rgba(56,189,248,0.35)] ring-1 ring-cyan-200/20 md:text-sm">
             Public access is limited to approved disclosures. Request access
             below.
           </div>
