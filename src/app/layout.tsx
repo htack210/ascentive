@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s | Ascentive Dynamics",
   },
   description:
-    "Global biotechnology and pharmaceuticals company advancing human longevity through precision science and adaptive intelligence.",
+    "Global biotechnology and pharmaceuticals company advancing human longevity and health through precision science and adaptive intelligence.",
 
   robots: {
     index: false,
