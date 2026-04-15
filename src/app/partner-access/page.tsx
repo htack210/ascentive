@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import frontOnly from "@/assets/FrontOnly.png";
 
 export default function PartnerAccessPage() {
   return (
@@ -33,8 +32,7 @@ export default function PartnerAccessPage() {
       </div>
 
       <main className="mx-auto w-full max-w-5xl px-6 pb-24 pt-4">
-        <div className="grid items-center gap-10 text-center md:grid-cols-[1.1fr_0.9fr] md:text-left">
-          <div className="space-y-6">
+        <div className="space-y-6 text-center md:text-left">
             <div className="text-xs uppercase tracking-[0.3em] text-white/60">
               Partner Access
             </div>
@@ -50,23 +48,14 @@ export default function PartnerAccessPage() {
             </p>
           </div>
 
-          <div className="mx-auto w-full max-w-sm overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-3 shadow-[0_30px_120px_rgba(10,15,30,0.45)] md:mx-0">
-            <Image
-              src={frontOnly}
-              alt="Project Vectus cover"
-              className="h-auto w-full rounded-2xl object-cover"
-            />
-          </div>
-        </div>
-
         <div className="mt-10 flex justify-center md:justify-start">
           <a
             className="rounded-full bg-white px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#05070c] transition hover:bg-white/90"
-            href="https://www.amazon.com/dp/B0GJMQL3J8"
+            href="https://www.projectvectus.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Available Now on Amazon
+            Visit the official series site
           </a>
         </div>
       </main>

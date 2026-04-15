@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 const metrics = [
   { label: "Countries served", value: "64" },
@@ -54,6 +57,13 @@ const disclosures = [
 ];
 
 export default function Home() {
+  const [showToast, setShowToast] = useState(false);
+
+  function handleRestrictedClick() {
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 3000);
+  }
+
   return (
     <div className="min-h-screen bg-[#05070c] text-white">
       <div className="relative overflow-hidden">
@@ -107,10 +117,10 @@ export default function Home() {
               new era of intelligent discovery.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="rounded-full bg-white px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#05070c] transition hover:bg-white/90">
+              <button onClick={handleRestrictedClick} className="rounded-full bg-white px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#05070c] transition hover:bg-white/90">
                 Explore Portfolio
               </button>
-              <button className="rounded-full border border-white/30 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white/80 transition hover:border-white/60 hover:text-white">
+              <button onClick={handleRestrictedClick} className="rounded-full border border-white/30 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white/80 transition hover:border-white/60 hover:text-white">
                 View Research Dossier
               </button>
             </div>
@@ -252,7 +262,7 @@ export default function Home() {
               <p className="mt-3 text-sm leading-relaxed text-white/60">
                 {disclosure.copy}
               </p>
-              <div className="mt-6 text-xs uppercase tracking-[0.3em] text-white/50">
+              <div onClick={handleRestrictedClick} className="mt-6 cursor-pointer text-xs uppercase tracking-[0.3em] text-white/50 transition hover:text-white/80">
                 Learn more
               </div>
             </div>
@@ -309,6 +319,12 @@ export default function Home() {
           </Link>
         </div>
       </section>
+
+      {showToast && (
+        <div className="fixed bottom-8 left-1/2 -translate-x-1/2 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white shadow-lg backdrop-blur-md">
+          Request access below.
+        </div>
+      )}
 
       <footer className="border-t border-white/10 bg-black/40">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 py-10 text-sm text-white/60 md:flex-row md:items-center md:justify-between">
