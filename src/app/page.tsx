@@ -188,7 +188,8 @@ export default function Home() {
           {platforms.map((platform) => (
             <div
               key={platform.title}
-              className="group rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 via-white/5 to-transparent p-8 transition hover:border-white/30"
+              onClick={handleRestrictedClick}
+            className="group cursor-pointer rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 via-white/5 to-transparent p-8 transition hover:border-white/30"
             >
               <div className="text-xs uppercase tracking-[0.3em] text-white/60">
                 Platform
