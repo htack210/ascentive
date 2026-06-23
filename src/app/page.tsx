@@ -100,7 +100,7 @@ export default function Home() {
         <section className="relative mx-auto grid w-full max-w-6xl gap-10 px-6 pb-24 pt-4 md:grid-cols-[1.2fr_0.8fr] md:items-center">
           <div className="space-y-8">
             <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.3em] text-white/70">
-              Global pharmaceuticals • since 1984
+              Global technologies • since 1984
             </div>
             <h1 className="text-4xl font-semibold leading-tight text-white md:text-6xl md:leading-tight font-[var(--font-display)]">
               Humanity, optimized through precision science and adaptive
@@ -128,7 +128,10 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative space-y-6 rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-transparent p-8 shadow-[0_30px_120px_rgba(10,15,30,0.45)]">
+          <Link
+            href="/aip"
+            className="relative block space-y-6 rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-transparent p-8 shadow-[0_30px_120px_rgba(10,15,30,0.45)] transition hover:border-white/20"
+          >
             <div className="text-xs uppercase tracking-[0.35em] text-white/60">
               Active intelligence
             </div>
@@ -145,7 +148,7 @@ export default function Home() {
               <span>Classified platform</span>
               <span>Clearance 4+</span>
             </div>
-          </div>
+          </Link>
         </section>
       </div>
 
@@ -253,22 +256,50 @@ export default function Home() {
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
-          {disclosures.map((disclosure) => (
-            <div
-              key={disclosure.title}
-              className="rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 via-white/5 to-transparent p-7"
-            >
-              <h3 className="text-lg font-semibold text-white font-[var(--font-display)]">
-                {disclosure.title}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-white/60">
-                {disclosure.copy}
-              </p>
-              <div className="mt-6 text-xs uppercase tracking-[0.3em] text-white/50">
-                Learn more
+          {disclosures.map((disclosure) => {
+            const isAIP = disclosure.title === "Adaptive Intelligence Platform";
+            const isEIC = disclosure.title === "Ethics & Integrity Council";
+            const isPDS = disclosure.title === "Patient Data Safeguards";
+            const isClickable = isAIP || isEIC || isPDS;
+
+            if (isClickable) {
+              const href = isAIP ? "/aip" : isEIC ? "/eic" : "/pds";
+              return (
+                <Link
+                  key={disclosure.title}
+                  href={href}
+                  className="block rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 via-white/5 to-transparent p-7 transition hover:border-white/20 cursor-pointer"
+                >
+                  <h3 className="text-lg font-semibold text-white font-[var(--font-display)]">
+                    {disclosure.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-white/60">
+                    {disclosure.copy}
+                  </p>
+                  <div className="mt-6 text-xs uppercase tracking-[0.3em] text-white/50">
+                    Learn more
+                  </div>
+                </Link>
+              );
+            }
+
+            return (
+              <div
+                key={disclosure.title}
+                className="rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 via-white/5 to-transparent p-7"
+              >
+                <h3 className="text-lg font-semibold text-white font-[var(--font-display)]">
+                  {disclosure.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-white/60">
+                  {disclosure.copy}
+                </p>
+                <div className="mt-6 text-xs uppercase tracking-[0.3em] text-white/50">
+                  Learn more
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
