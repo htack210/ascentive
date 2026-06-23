@@ -80,15 +80,21 @@ export default function Home() {
             <span className="transition hover:text-white">Responsibility</span>
             <span className="transition hover:text-white">Investors</span>
           </nav>
-          <button className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs uppercase tracking-[0.2em] text-white transition hover:bg-white/20">
+          <Link
+            href="/partner-access"
+            className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs uppercase tracking-[0.2em] text-white transition hover:bg-white/20"
+          >
             Partner Access
-          </button>
+          </Link>
         </header>
         <div className="relative mx-auto flex w-full max-w-6xl justify-center px-6 pb-6">
-          <div className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.2em] text-white/70 md:text-sm">
+          <a
+            href="#partnership"
+            className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.2em] text-white/70 transition hover:bg-white/10 hover:text-white md:text-sm cursor-pointer"
+          >
             Public access is limited to approved disclosures. Request access
             below.
-          </div>
+          </a>
         </div>
 
         <section className="relative mx-auto grid w-full max-w-6xl gap-10 px-6 pb-24 pt-4 md:grid-cols-[1.2fr_0.8fr] md:items-center">
@@ -107,12 +113,18 @@ export default function Home() {
               new era of intelligent discovery.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="rounded-full bg-white px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#05070c] transition hover:bg-white/90">
+              <Link
+                href="/partner-access"
+                className="rounded-full bg-white px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#05070c] transition hover:bg-white/90"
+              >
                 Explore Portfolio
-              </button>
-              <button className="rounded-full border border-white/30 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white/80 transition hover:border-white/60 hover:text-white">
+              </Link>
+              <Link
+                href="/partner-access"
+                className="rounded-full border border-white/30 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white/80 transition hover:border-white/60 hover:text-white"
+              >
                 View Research Dossier
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -289,7 +301,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-6xl px-6 pb-24">
+      <section id="partnership" className="mx-auto w-full max-w-6xl px-6 pb-24">
         <div className="flex flex-col items-center gap-6 rounded-3xl border border-white/10 bg-white/5 p-10 text-center">
           <div className="text-xs uppercase tracking-[0.3em] text-white/60">
             Partnership

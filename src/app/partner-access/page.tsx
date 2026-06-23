@@ -59,16 +59,6 @@ export default function PartnerAccessPage() {
           </div>
         </div>
 
-        <div className="mt-10 flex justify-center md:justify-start">
-          <a
-            className="rounded-full bg-white px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#05070c] transition hover:bg-white/90"
-            href="https://www.amazon.com/dp/B0GJMQL3J8"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Available Now on Amazon
-          </a>
-        </div>
       </main>
     </div>
   );
