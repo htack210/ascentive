@@ -190,22 +190,50 @@ export default function Home() {
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
-          {platforms.map((platform) => (
-            <div
-              key={platform.title}
-              className="group rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 via-white/5 to-transparent p-8 transition hover:border-white/30"
-            >
-              <div className="text-xs uppercase tracking-[0.3em] text-white/60">
-                Platform
+          {platforms.map((platform) => {
+            const isNeuroadaptive = platform.title === "Neuroadaptive Therapeutics";
+            const isCellularRegen = platform.title === "Cellular Regeneration";
+            const isResilience = platform.title === "Resilience Vaccinology";
+            const isClickable = isNeuroadaptive || isCellularRegen || isResilience;
+
+            if (isClickable) {
+              const href = isNeuroadaptive ? "/nat" : isCellularRegen ? "/cregen" : "/rvp";
+              return (
+                <Link
+                  key={platform.title}
+                  href={href}
+                  className="group block rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 via-white/5 to-transparent p-8 transition hover:border-white/30 cursor-pointer"
+                >
+                  <div className="text-xs uppercase tracking-[0.3em] text-white/60">
+                    Platform
+                  </div>
+                  <h3 className="mt-4 text-2xl font-semibold text-white font-[var(--font-display)]">
+                    {platform.title}
+                  </h3>
+                  <p className="mt-4 text-sm leading-relaxed text-white/65">
+                    {platform.copy}
+                  </p>
+                </Link>
+              );
+            }
+
+            return (
+              <div
+                key={platform.title}
+                className="group rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 via-white/5 to-transparent p-8 transition hover:border-white/30"
+              >
+                <div className="text-xs uppercase tracking-[0.3em] text-white/60">
+                  Platform
+                </div>
+                <h3 className="mt-4 text-2xl font-semibold text-white font-[var(--font-display)]">
+                  {platform.title}
+                </h3>
+                <p className="mt-4 text-sm leading-relaxed text-white/65">
+                  {platform.copy}
+                </p>
               </div>
-              <h3 className="mt-4 text-2xl font-semibold text-white font-[var(--font-display)]">
-                {platform.title}
-              </h3>
-              <p className="mt-4 text-sm leading-relaxed text-white/65">
-                {platform.copy}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
