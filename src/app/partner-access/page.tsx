@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import frontOnly from "@/assets/FrontOnly.png";
 
 export default function PartnerAccessPage() {
   return (
@@ -32,33 +31,22 @@ export default function PartnerAccessPage() {
         </header>
       </div>
 
-      <main className="mx-auto w-full max-w-5xl px-6 pb-24 pt-4">
-        <div className="grid items-center gap-10 text-center md:grid-cols-[1.1fr_0.9fr] md:text-left">
-          <div className="space-y-6">
-            <div className="text-xs uppercase tracking-[0.3em] text-white/60">
-              Partner Access
-            </div>
-            <h1 className="text-2xl font-semibold leading-tight text-white md:text-3xl font-[var(--font-display)]">
-              Ascentive Dynamics is a fictional entity created for narrative
-              purposes as part of the <i>Project Vectus</i> universe. Any
-              resemblance to real organizations is coincidental.
-            </h1>
-            <p className="text-sm leading-relaxed text-white/60">
-              This portal is a narrative extension of the Ascentive Dynamics
-              universe. Access is limited to sanctioned partners, archivists,
-              and readers exploring the broader lore.
-            </p>
+      <main className="mx-auto w-full max-w-2xl px-6 pb-24 pt-4 text-center">
+        <div className="space-y-6">
+          <div className="text-xs uppercase tracking-[0.3em] text-white/60">
+            Partner Access
           </div>
-
-          <div className="mx-auto w-full max-w-sm overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-3 shadow-[0_30px_120px_rgba(10,15,30,0.45)] md:mx-0">
-            <Image
-              src={frontOnly}
-              alt="Project Vectus cover"
-              className="h-auto w-full rounded-2xl object-cover"
-            />
-          </div>
+          <h1 className="text-2xl font-semibold leading-tight text-white md:text-3xl font-[var(--font-display)]">
+            Ascentive Dynamics is a fictional entity created for narrative
+            purposes as part of the <i>Project Vectus</i> universe. Any
+            resemblance to real organizations is coincidental.
+          </h1>
+          <p className="text-sm leading-relaxed text-white/60">
+            This portal is a narrative extension of the Ascentive Dynamics
+            universe. Access is limited to sanctioned partners, archivists,
+            and readers exploring the broader lore.
+          </p>
         </div>
-
       </main>
     </div>
   );
